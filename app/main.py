@@ -5,9 +5,11 @@ from app.database import get_db
 from app.schemas import UserCreate, UserResponse, ApplicationCreate, ApplicationResponse
 from app import models, schemas
 from fastapi.middleware.cors import CORSMiddleware
+from database import engine, Base
 import logging
 import sys
 
+Base.metadata.create_all(bind=engine)
 app = FastAPI()
 
 app.add_middleware(
