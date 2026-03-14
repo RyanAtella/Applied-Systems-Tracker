@@ -5,6 +5,8 @@ from app.database import get_db
 from app.schemas import UserCreate, UserResponse, ApplicationCreate, ApplicationResponse
 from app import models, schemas
 from fastapi.middleware.cors import CORSMiddleware
+import logging
+import sys
 
 app = FastAPI()
 
@@ -83,8 +85,14 @@ def get_user_applications(user_id: int, db: Session = Depends(get_db)):
 
 @app.get("/applications")
 def get_applications(db: Session = Depends(get_db)):
-    applications = db.query(models.Application).all()
-    return applications
+    try:
+        applications = db.query(models.Application).all()
+        return applications
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        raise
+
 
 @app.get("/applications/{application_id}")
 def get_application(application_id: int, db: Session = Depends(get_db)):
