@@ -1,11 +1,11 @@
 from typing import List
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from app.database import get_db
+from app.database import get_db, engine, Base
 from app.schemas import UserCreate, UserResponse, ApplicationCreate, ApplicationResponse
 from app import models, schemas
 from fastapi.middleware.cors import CORSMiddleware
-from database import engine, Base
+
 import logging
 import sys
 
