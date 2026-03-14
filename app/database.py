@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 import os
 
 #1. Database connection URL
-DATABASE_URL = "DATABASE_URL"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 #2. Create the SQLAlchemy engine
 engine = create_engine(DATABASE_URL)
