@@ -1,9 +1,11 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey, Enum
 from sqlalchemy.orm import relationship
-from app.database import Base
+from app.database import engine
 from app.schemas import ApplicationStatus
+from app.models import Base
 
 
+Base.metadata.create_all(bind=engine)
 #__tablename__ -> SQL table name
 #id -> primary key, auto-incrementing integer
 #name -> string column for user's name
