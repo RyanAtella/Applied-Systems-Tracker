@@ -28,7 +28,7 @@ class ApplicationCreate(BaseModel):
     role: str
     status: ApplicationStatus
     date_applied: date
-    user_id: 4
+    user_id: int = 4
 
 class ApplicationResponse(BaseModel):
     id: int
@@ -36,7 +36,7 @@ class ApplicationResponse(BaseModel):
     role: str
     status: ApplicationStatus
     date_applied: date
-    user_id: 4
+    user_id: int = 4
 
     class Config:
         from_attributes = True
@@ -49,7 +49,7 @@ class ApplicationCreate(BaseModel):
     role: str
     status: ApplicationStatus
     date_applied: date
-    user_id: 4
+    user_id: int = 4
 
 class ApplicationResponse(BaseModel):
     id: int
@@ -57,7 +57,7 @@ class ApplicationResponse(BaseModel):
     role: str
     status: ApplicationStatus
     date_applied: date
-    user_id: 4
+    user_id: int = 4
 
     class Config:
         from_attributes = True
