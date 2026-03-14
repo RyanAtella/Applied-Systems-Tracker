@@ -10,7 +10,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://Appliedsystemstracker.vercel.app"],  # Vite frontend URL
+    allow_origins=["https://appliedsystemstracker.vercel.app"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

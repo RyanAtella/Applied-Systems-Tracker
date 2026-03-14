@@ -1,8 +1,9 @@
 from sqlalchemy import create_engine 
 from sqlalchemy.orm import sessionmaker, declarative_base
+import os
 
 #1. Database connection URL
-DATABASE_URL = "postgresql://postgres:Nutellarooni!1@localhost:5432/applied_systems_project"
+DATABASE_URL = "DATABASE_URL"
 
 #2. Create the SQLAlchemy engine
 engine = create_engine(DATABASE_URL)
