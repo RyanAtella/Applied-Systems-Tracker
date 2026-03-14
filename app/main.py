@@ -59,13 +59,13 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
 
 @app.post("/applications", response_model=ApplicationResponse)
 def create_application(application: ApplicationCreate, db: Session = Depends(get_db)):
-    
+
     new_application = models.Application(
         company=application.company,
         role=application.role,
         status=application.status,
         date_applied=application.date_applied,
-        user_id=application.user_id
+        user_id=4  # set it here
     )
 
     db.add(new_application)
