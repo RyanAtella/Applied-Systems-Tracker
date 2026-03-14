@@ -5,6 +5,10 @@ import os
 #1. Database connection URL
 DATABASE_URL = os.getenv("DATABASE_URL")
 
+# Add ?sslmode=require if it's not already in the URL
+if DATABASE_URL and "sslmode" not in DATABASE_URL:
+    DATABASE_URL += "?sslmode=require"
+    
 #2. Create the SQLAlchemy engine
 engine = create_engine(DATABASE_URL)
 
